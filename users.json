@@ -1,0 +1,50 @@
+{
+  "swagger": "2.0",
+  "host": "localhost:5000",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "info": {
+    "description": "Swagger 2.0 Specification for Task Tracker API",
+    "title": "Task Tracker API",
+    "version": "0.0.1",
+    "termsOfService": "http://example.com/about/terms",
+    "contact": {
+      "name": "API Docs",
+      "url": "http://example.com/contact",
+      "email": "apidocs@example.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://example.com"
+    }
+  },
+  "basePath": "/api/users",
+  "paths": {
+    "/": {
+      "get": {
+        "description": "Get's a specific user's information",
+        "summary": "get a user's information",
+        "externalDocs": {
+          "description": "Find out more",
+          "url": "http://docs.example.com/management/apis/get/entities"
+        },
+        "operationId": "uniqueId",
+        "tags": [
+          "api2swagger"
+        ],
+        "produces": [
+          "text/html; charset=utf-8"
+        ],
+        "responses": {
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [],
+        "parameters": []
+      }
+    }
+  }
+}

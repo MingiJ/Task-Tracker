@@ -1,0 +1,101 @@
+{
+    "swagger": "2.0",
+    "host": "localhost:5000",
+    "schemes": [
+      "http"
+    ],
+    "info": {
+      "description": "Swagger 2.0 Specification for Task Tracker API",
+      "title": "Task Tracker",
+      "version": "0.0.1",
+    "basePath": "/api/categories",
+    "paths": {
+      "/": {
+        "get": {
+          "description": "Gets all the categories",
+          "summary": "Gets categories",
+          "operationId": "getCategories",
+          "tags": [
+            "api2swagger"
+          ],
+          "produces": [
+            "application/json; charset=utf-8"
+          ],
+          "responses": {
+            "200": {
+              "description": "ok",
+              "schema": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "id": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "required": [
+                  "name"
+                ]
+              }
+            }
+          },
+          "security": [],
+          "parameters": []
+        },
+        "post": {
+          "description": "Creates a category",
+          "summary": "creates category",
+          "operationId": "uniqueId",
+          "tags": [
+            "api2swagger"
+          ],
+          "produces": [
+            "application/json; charset=utf-8"
+          ],
+          "responses": {
+            "201": {
+              "description": "created",
+              "schema": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "minLength": 1
+                  
+                },
+                "required": [
+                  "name"
+                ]
+              }
+            }
+          },
+          "security": [],
+          "parameters": []
+        },
+        "/:id": {
+        "delete": {
+          "description": "Delete's a category",
+          "summary": "delete category",
+          "operationId": "uniqueId",
+          "tags": [
+            "api2swagger"
+          ],
+          "produces": [
+            "application/json; charset=utf-8"
+          ],
+          "responses": {
+            "200": {
+              "description": "Ok"
+            }
+          },
+          "security": [],
+          "parameters": []
+        }
+    }
+      }
+    }
+  }
