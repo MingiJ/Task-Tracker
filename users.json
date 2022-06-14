@@ -10,14 +10,8 @@
     "title": "Task Tracker API",
     "version": "0.0.1",
     "termsOfService": "http://example.com/about/terms",
-    "contact": {
-      "name": "API Docs",
-      "url": "http://example.com/contact",
-      "email": "apidocs@example.com"
-    },
     "license": {
-      "name": "Apache 2.0",
-      "url": "http://example.com"
+      "name": "Apache 2.0"
     }
   },
   "basePath": "/api/users",
@@ -35,11 +29,11 @@
           "api2swagger"
         ],
         "produces": [
-          "text/html; charset=utf-8"
+          "application/json; charset=utf-8"
         ],
         "responses": {
-          "404": {
-            "description": "Not Found"
+          "200": {
+            "description": "ok"
           }
         },
         "security": [],

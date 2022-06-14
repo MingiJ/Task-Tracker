@@ -9,11 +9,6 @@
     "title": "Task Tracker",
     "version": "0.0.1",
     "termsOfService": "http://example.com/about/terms",
-    "contact": {
-      "name": "API Docs",
-      "url": "http://example.com/contact",
-      "email": "apidocs@example.com"
-    },
     "license": {
       "name": "Apache 2.0",
       "url": "http://example.com"
@@ -21,6 +16,52 @@
   },
   "basePath": "/api/tasks",
   "paths": {
+    "/:id":{
+      "put": {
+        "description": "Updates a specific user's tasks",
+        "summary": "updates a user's tasks",
+        "externalDocs": {
+          "description": "Find out more",
+          "url": "http://docs.example.com/management/apis/get/entities"
+        },
+        "operationId": "uniqueId",
+        "tags": [
+          "api2swagger"
+        ],
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [],
+        "parameters": []
+      },
+      "delete": {
+        "description": "Delete's a specific users task",
+        "summary": "deletes a user's tasks",
+        "externalDocs": {
+          "description": "Find out more",
+          "url": "http://docs.example.com/management/apis/get/entities"
+        },
+        "operationId": "uniqueId",
+        "tags": [
+          "api2swagger"
+        ],
+        "produces": [
+          "application/json; charset=utf-8"
+        ],
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "security": [],
+        "parameters": []
+      }
+    },
     "/": {
       "get": {
         "description": "Get user specific tasks",
@@ -33,24 +74,28 @@
           "application/json; charset=utf-8"
         ],
         "responses": {
-          "401": {
-            "description": "Unauthorized",
+          "200": {
+            "description": "Ok",
             "schema": {
               "description": "",
               "type": "object",
               "properties": {
+                "title": {
+                  "type": "string",
+                  "minLength": 1
+                },
                 "message": {
                   "type": "string",
                   "minLength": 1
                 },
-                "stack": {
+                "category": {
                   "type": "string",
                   "minLength": 1
                 }
               },
               "required": [
-                "message",
-                "stack"
+                "title",
+                "category"
               ]
             }
           }
@@ -73,75 +118,36 @@
           "application/json; charset=utf-8"
         ],
         "responses": {
-          "401": {
-            "description": "Unauthorized",
+          "201": {
+            "description": "Created",
             "schema": {
               "description": "",
               "type": "object",
               "properties": {
-                "message": {
+                "title": {
                   "type": "string",
                   "minLength": 1
                 },
-                "stack": {
+                "category": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "message": {
                   "type": "string",
                   "minLength": 1
                 }
               },
               "required": [
-                "message",
-                "stack"
+                "title",
+                "category"
               ]
             }
           }
         },
         "security": [],
         "parameters": []
-      },
-      "put": {
-        "description": "Updates a specific user's tasks",
-        "summary": "updates a user's tasks",
-        "externalDocs": {
-          "description": "Find out more",
-          "url": "http://docs.example.com/management/apis/get/entities"
-        },
-        "operationId": "uniqueId",
-        "tags": [
-          "api2swagger"
-        ],
-        "produces": [
-          "text/html; charset=utf-8"
-        ],
-        "responses": {
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [],
-        "parameters": []
-      },
-      "delete": {
-        "description": "Delete's a specific users task",
-        "summary": "deletes a user's tasks",
-        "externalDocs": {
-          "description": "Find out more",
-          "url": "http://docs.example.com/management/apis/get/entities"
-        },
-        "operationId": "uniqueId",
-        "tags": [
-          "api2swagger"
-        ],
-        "produces": [
-          "text/html; charset=utf-8"
-        ],
-        "responses": {
-          "404": {
-            "description": "Not Found"
-          }
-        },
-        "security": [],
-        "parameters": []
       }
+      
     }
   }
 }
